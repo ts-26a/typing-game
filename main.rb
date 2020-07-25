@@ -113,7 +113,7 @@ all = 0
 flag = false
 
 result = Benchmark.realtime do
-  while
+  while true
     word = words.sample
     puts "\e[36m#{word}\e[0m"
     i = -1
