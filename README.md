@@ -1,6 +1,6 @@
 # typing-game
 
-This is an typing game written in ruby.
+This is a typing game written in ruby.
 
 
 # How to play
