@@ -129,15 +129,18 @@ result = Benchmark.realtime do
         flag = true
         break
       else
+        # \e[31m
+        print "\r#{word[0...i]}\e[31m#{word[i]}\e[0m\e[2m#{word[i+1..wl]}\e[0m"
         miss += 1
         i -= 1
       end
     end
-    puts
     break if flag
+    puts
   end
 end
 
 
+print "\e[2K\e[1A\e[2K\r"
 puts "miss: #{miss}"
-puts "press: #{all / result}/s"
+printf "press: %.5f/s\n" %(all / result)
