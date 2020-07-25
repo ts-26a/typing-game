@@ -129,7 +129,6 @@ result = Benchmark.realtime do
         flag = true
         break
       else
-        # \e[31m
         print "\r#{word[0...i]}\e[31m#{word[i]}\e[0m\e[2m#{word[i+1..wl]}\e[0m"
         miss += 1
         i -= 1
