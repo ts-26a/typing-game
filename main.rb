@@ -117,12 +117,14 @@ result = Benchmark.realtime do
     word = words.sample
     puts "\e[36m#{word}\e[0m"
     i = -1
-    while i != (word.length-1)
+    wl = word.length
+    print "\e[2m#{word}\e[0m"
+    while i != (wl-1)
       i += 1
       key = STDIN.getch
       all += 1
       if key == word[i]
-        print key
+        print "\r#{word[0..i]}\e[2m#{word[i+1..wl]}\e[0m"
       elsif key == "\C-c"
         flag = true
         break
